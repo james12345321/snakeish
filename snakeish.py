@@ -13,7 +13,7 @@ titlefont = pygame.font.SysFont(None, 100)
 smallfont = pygame.font.SysFont(None, 50)
 screen = pygame.display.set_mode((800, 800), pygame.NOFRAME)
 pygame.display.set_caption("game")
-score=9
+score=1
 
 block1image=pygame.image.load('snakehead1.png').convert_alpha()
 block1=block1image.get_rect()
