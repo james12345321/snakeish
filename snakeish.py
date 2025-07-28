@@ -118,11 +118,14 @@ while running:
                     with open('highscore.txt', 'r') as highread:
                         highscorenum=str(highread.read())
                         highread.close()
+                updatehighscore=True
             except FileNotFoundError:
-                highscore=smallfont.render('missing highscore.txt file!')
+                highscore=smallfont.render('missing highscore.txt file!', True, WHITE)
+                gethighscore=False
             gameover = titlefont.render('GAME OVER', True, RED)
             text = smallfont.render(f'time took: {round(elapsedTime, 5)} seconds', True, WHITE)
-            highscore = smallfont.render(f'your high score is {highscorenum} seconds', True, WHITE)
+            if gethighscore:
+                highscore = smallfont.render(f'your high score is {highscorenum} seconds', True, WHITE)
             moretext = smallfont.render('press space to quit, enter to restart', True, WHITE)
             screen.fill(BLACK)
             screen.blit(gameover, (10, 10))
